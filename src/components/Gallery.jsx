@@ -2,9 +2,9 @@ import { Box, Heading, Image } from "@chakra-ui/react";
 import React from "react";
 import Slider from "react-slick";
 
-import GalleryOne from "../assets/gallery-1.avif";
-import GalleryTwo from "../assets/gallery-2.avif";
-import GalleryThree from "../assets/gallery-3.avif";
+import GalleryOne from "../assets/kabul.jpg";
+import GalleryTwo from "../assets/bayman.jpg";
+import GalleryThree from "../assets/mazar.jpeg";
 
 function Gallery() {
   var settings = {
@@ -83,7 +83,7 @@ const css = {
   },
   image: {
     width: "95%",
-    height: "100%",
+    height: "350px",
     objectFit: "cover",
     borderRadius: "8px",
   },

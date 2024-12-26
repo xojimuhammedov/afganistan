@@ -1,6 +1,10 @@
 import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import React from "react";
 
+import AmirImage from "../assets/amir.jpg";
+import BamyanImage from "../assets/bamyan.jpg";
+import HeratImage from "../assets/herat.jpg";
+
 function Destination() {
   return (
     <Box p={"36px 0"}>
@@ -17,38 +21,17 @@ function Destination() {
         </Flex>
         <Flex mt={"48px"} gap={"24px"} justifyContent={"space-between"}>
           <Box w={"46%"}>
-            <Image
-              src="https://framerusercontent.com/images/du2MtdKmr0ucxgivPhY6xDNDVw.jpg?scale-down-to=2048"
-              {...css.image}
-            />
-            <Heading {...css.name}>Omprehensive Travel Support</Heading>
-            <Text {...css.texts}>
-              24/7 customer service to assist you before, during, and after your
-              trip
-            </Text>
+            <Image src={AmirImage} {...css.image} />
+            <Heading {...css.name}>Band-e-Amir National Park</Heading>
           </Box>
           <Flex gap={"24px"} w={"54%"} flexDirection={"column"}>
             <Box width={"100%"}>
-              <Image
-                src="https://framerusercontent.com/images/tvEBoO2HjYBHf3ODZeFwBQTBM.jpg?scale-down-to=2048"
-                {...css.images}
-              />
-              <Heading {...css.name}>Omprehensive Travel Support</Heading>
-              <Text {...css.texts}>
-                24/7 customer service to assist you before, during, and after
-                your trip
-              </Text>
+              <Image src={BamyanImage} {...css.images} />
+              <Heading {...css.name}>Bamiyan Valley</Heading>
             </Box>
             <Box width={"100%"}>
-              <Image
-                src="https://framerusercontent.com/images/Zci58zZDejSHWqVsd3zMkQgJco.jpg?scale-down-to=2048"
-                {...css.images}
-              />
-              <Heading {...css.name}>Omprehensive Travel Support</Heading>
-              <Text {...css.texts}>
-                24/7 customer service to assist you before, during, and after
-                your trip
-              </Text>
+              <Image src={HeratImage} {...css.images} />
+              <Heading {...css.name}>Herat City</Heading>
             </Box>
           </Flex>
         </Flex>
@@ -79,7 +62,7 @@ const css = {
   },
   image: {
     width: "100%",
-    height: "600px",
+    height: "575px",
     objectFit: "cover",
     borderRadius: "8px",
   },

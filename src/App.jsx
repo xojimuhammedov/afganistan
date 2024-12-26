@@ -1,4 +1,5 @@
 import "./App.css";
+import About from "./components/About";
 import Contact from "./components/Contact";
 import Destination from "./components/Destination";
 import Footer from "./components/Footer";
@@ -12,6 +13,7 @@ function App() {
     <>
       <Navbar />
       {/* <Header /> */}
+      <About />
       <Destination />
       <Tour />
       <Gallery />
