@@ -18,8 +18,11 @@ const css = {
     backgroundImage: `url(${HeaderBanner})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
-    height: "100vh",
-    width:"100%",
+    height: {
+      base: "400px",
+      lg: "100vh",
+    },
+    width: "100%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",

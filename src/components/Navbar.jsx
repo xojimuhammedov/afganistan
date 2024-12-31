@@ -42,7 +42,7 @@ const css = {
       base: "120px",
       lg: "120px",
     },
-    height: "80px",
+    height: "90px",
     objectFit: "cover",
   },
   link: {

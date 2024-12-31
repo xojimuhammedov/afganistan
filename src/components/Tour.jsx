@@ -20,7 +20,10 @@ function Tour() {
             journey to remember.
           </Text>
         </Flex>
-        <SimpleGrid gap={"32px"} mt={"32px"} columns={3}>
+        <SimpleGrid
+          gap={"32px"}
+          mt={"32px"}
+          columns={{ base: 1, sm: 2, lg: 3 }}>
           <Box>
             <Image {...css.image} src={BendAmir} alt="TourImage" />
             <Heading {...css.name}>Band-e Amir National Park</Heading>
@@ -57,10 +60,20 @@ const css = {
   list: {
     alignItems: "center",
     justifyContent: "space-between",
+    flexDirection: {
+      base: "column",
+      lg: "row",
+    },
   },
   title: {
-    fontSize: "50px",
-    lineHeight: "60px",
+    fontSize: {
+      base: "30px",
+      md: "50px",
+    },
+    lineHeight: {
+      base: "45px",
+      md: "60px",
+    },
     fontWeight: "500",
     color: "#112347",
   },
@@ -68,7 +81,10 @@ const css = {
     fontSize: "16px",
     lineHeight: "25px",
     color: "#a2a2a2",
-    width: "600px",
+    width:{
+      base: "100%",
+      lg: "600px",
+    },
   },
   name: {
     fontSize: "24px",

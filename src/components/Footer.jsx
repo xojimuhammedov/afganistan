@@ -49,7 +49,10 @@ export default Footer;
 
 const css = {
   footer: {
-    padding: "36px 0",
+    padding: {
+      base: "18px 0",
+      lg: "36px 0",
+    },
     backgroundColor: "#112347",
   },
   name: {

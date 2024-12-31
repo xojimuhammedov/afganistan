@@ -42,13 +42,13 @@ function Gallery() {
       {
         breakpoint: 500,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
         },
       },
     ],
   };
   return (
-    <Box id="gallery" p={"36px 0"}>
+    <Box id="gallery" p={{ base: "18px 0", lg: "36px 0" }}>
       <Box className="container">
         <Heading {...css.title}>Journey in Afganistan</Heading>
         <Slider {...settings}>
@@ -80,16 +80,28 @@ export default Gallery;
 
 const css = {
   title: {
-    fontSize: "50px",
-    lineHeight: "60px",
+    fontSize: {
+      base: "32px",
+      lg: "50px",
+    },
+    lineHeight: {
+      base: "45px",
+      lg: "60px",
+    },
     fontWeight: "500",
     textAlign: "center",
     color: "#112347",
     marginBottom: "36px",
   },
   image: {
-    width: "95%",
-    height: "350px",
+    width: {
+      base: "97%",
+      lg: "95%",
+    },
+    height: {
+      base: "200px",
+      lg: "350px",
+    },
     objectFit: "cover",
     borderRadius: "8px",
   },

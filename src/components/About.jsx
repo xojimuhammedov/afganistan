@@ -41,11 +41,11 @@ const css = {
   title: {
     color: "#112347",
     fontSize: {
-      base: "32px",
+      base: "26px",
       md: "42px",
     },
     lineHeight: {
-      base: "40px",
+      base: "35px",
       md: "58px",
     },
     fontWeight: "500",

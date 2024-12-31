@@ -19,12 +19,19 @@ function Destination() {
             promises unforgettable memories
           </Text>
         </Flex>
-        <Flex mt={"48px"} gap={"24px"} justifyContent={"space-between"}>
-          <Box w={"46%"}>
+        <Flex
+          flexDirection={{ base: "column", lg: "row" }}
+          mt={"48px"}
+          gap={"24px"}
+          justifyContent={"space-between"}>
+          <Box w={{ base: "100%", lg: "46%" }}>
             <Image src={AmirImage} {...css.image} />
             <Heading {...css.name}>Band-e-Amir National Park</Heading>
           </Box>
-          <Flex gap={"24px"} w={"54%"} flexDirection={"column"}>
+          <Flex
+            gap={"24px"}
+            w={{ base: "100%", lg: "54%" }}
+            flexDirection={"column"}>
             <Box width={"100%"}>
               <Image src={BamyanImage} {...css.images} />
               <Heading {...css.name}>Bamiyan Valley</Heading>
@@ -62,7 +69,10 @@ const css = {
   },
   image: {
     width: "100%",
-    height: "575px",
+    height: {
+      base: "350px",
+      lg: "575px",
+    },
     objectFit: "cover",
     borderRadius: "8px",
   },

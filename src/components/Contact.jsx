@@ -14,7 +14,11 @@ function Contact() {
     <Box id="contact" bg={"#F5F5F5"} p={"36px 0"}>
       <Box className="container">
         <Heading {...css.title}>Contact Us</Heading>
-        <Flex justify={"space-between"} align={"center"} mt={"36px"}>
+        <Flex
+          flexDirection={{ base: "column", lg: "row" }}
+          justify={"space-between"}
+          align={"center"}
+          mt={"36px"}>
           <Box {...css.left}>
             <Heading {...css.name}>Contact Information</Heading>
             <Text {...css.text}>Say something to start a live chat!</Text>
@@ -35,7 +39,7 @@ function Contact() {
             </Link>
           </Box>
           <Box {...css.right}>
-            <SimpleGrid gap={"16px"} columns={2}>
+            <SimpleGrid gap={"16px"} columns={{ base: 1, lg: 2 }}>
               <input
                 className="form-input"
                 placeholder="First Name"
@@ -47,7 +51,10 @@ function Contact() {
                 type="text"
               />
             </SimpleGrid>
-            <SimpleGrid gap={"16px"} m={"36px 0"} columns={2}>
+            <SimpleGrid
+              gap={"16px"}
+              m={{ base: "16px 0", lg: "36px 0" }}
+              columns={{ base: 1, lg: 2 }}>
               <input className="form-input" placeholder="Email" type="email" />
               <input
                 className="form-input"
@@ -71,8 +78,14 @@ export default Contact;
 
 const css = {
   title: {
-    fontSize: "50px",
-    lineHeight: "60px",
+    fontSize: {
+      base: "35px",
+      lg: "50px",
+    },
+    lineHeight: {
+      base: "45px",
+      lg: "60px",
+    },
     fontWeight: "500",
     textAlign: "center",
     color: "#112347",
@@ -93,9 +106,18 @@ const css = {
   left: {
     borderRadius: "10px",
     backgroundColor: "#011D2B",
-    padding: "30px",
-    width: "450px",
-    height: "500px",
+    padding: {
+      base: "10px",
+      lg: "30px",
+    },
+    width: {
+      base: "100%",
+      lg: "450px",
+    },
+    height: {
+      base: "100%",
+      lg: "500px",
+    },
   },
   name: {
     color: "#fff",
@@ -114,8 +136,14 @@ const css = {
   right: {
     borderRadius: "10px",
     backgroundColor: "#fff",
-    padding: "20px",
-    width: "700px",
+    padding: {
+      base: "10px",
+      lg: "20px",
+    },
+    width: {
+      base: "100%",
+      lg: "700px",
+    },
   },
   input: {
     backgroundColor: "#F5F5F5",
