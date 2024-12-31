@@ -5,6 +5,9 @@ import Slider from "react-slick";
 import GalleryOne from "../assets/kabul.jpg";
 import GalleryTwo from "../assets/bayman.jpg";
 import GalleryThree from "../assets/mazar.jpeg";
+import GalleryFour from "../assets/gallery-4.jpg";
+import GalleryFive from "../assets/gallery-5.jpg";
+import GallerySix from "../assets/galley-6.jpg";
 
 function Gallery() {
   var settings = {
@@ -59,10 +62,13 @@ function Gallery() {
             <Image {...css.image} src={GalleryThree} alt="GalleryThree" />
           </Box>
           <Box>
-            <Image {...css.image} src={GalleryOne} alt="GalleryOne" />
+            <Image {...css.image} src={GalleryFour} alt="GalleryOne" />
           </Box>
           <Box>
-            <Image {...css.image} src={GalleryTwo} alt="GalleryTwo" />
+            <Image {...css.image} src={GalleryFive} alt="GalleryTwo" />
+          </Box>
+          <Box>
+            <Image {...css.image} src={GallerySix} alt="GalleryTwo" />
           </Box>
         </Slider>
       </Box>

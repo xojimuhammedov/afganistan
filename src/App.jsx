@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Navbar />
-      {/* <Header /> */}
+      <Header />
       <About />
       <Destination />
       <Tour />

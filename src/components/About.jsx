@@ -13,16 +13,19 @@ function About() {
               We're Afghanistan's top adventure travel company!
             </Heading>
             <Text {...css.text}>
-              We are the top adventure travel company! Whether you're dreaming
-              of a romantic getaway filled with magical moments, planning a
-              serene and culturally rich family trip, or embarking on an
-              exciting solo journey to uncover the world's wonders, Afghanistan
-              offers an unparalleled destination that brings all your travel
-              dreams to life. With its mysterious mountains, ancient cities
-              steeped in history, and warm, welcoming people, Afghanistan is a
-              land where your wildest aspirations turn into reality. Our
-              experienced travel experts are dedicated to crafting bespoke
-              itineraries that not only meet but far exceed your expectations.
+              Despite Afghanistan’s volatile security situation, the country
+              showcases a wealth of natural and architectural wonders which
+              attract visitors both locally and internationally. Some famous
+              sights include Bamiyan, Mazar-e-Sharif, Herat and Kabul. Other
+              popular sites are Afghanistan’s two designated national parks;
+              Band-e-Amir National Park and Wakhan National Park.
+            </Text>
+            <Text {...css.text}>
+              Historically, Afghanistan has been a favorite tourist destination,
+              and the industry reached its peak in the 1970s with over 90,000
+              tourists visiting Afghanistan annually from different parts of the
+              world. Today, according to Ministry of Information and Culture,
+              around 20,000 foreign tourists visit Afghanistan annually.
             </Text>
           </Box>
           <Image {...css.image} src={AboutImageOne} alt="AboutImageOne" />

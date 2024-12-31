@@ -1,11 +1,11 @@
 import { Box, Flex, Image, Link, Text } from "@chakra-ui/react";
 import React from "react";
-import LogoIcon from "../assets/logo.jpg";
+import LogoIcon from "../assets/logo.png";
 import { Link as Alink } from "react-router-dom";
 
 function Navbar() {
   return (
-    <Box p={"12px 0"}>
+    <Box bg={"#112347"} p={"12px 0"}>
       <Box className="container">
         <Flex {...css.list}>
           <Alink to="/">
@@ -40,16 +40,16 @@ const css = {
   image: {
     width: {
       base: "120px",
-      lg: "100px",
+      lg: "120px",
     },
     height: "80px",
-    objectFit: "contain",
+    objectFit: "cover",
   },
   link: {
     fontSize: "16px",
     lineHeight: "24px",
     fontWeight: "500",
-    color: "#112347",
+    color: "#fff",
     transition: "0.3s",
     display: {
       base: "none",

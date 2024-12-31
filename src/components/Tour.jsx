@@ -3,6 +3,9 @@ import React from "react";
 
 import TourImage from "../assets/tour.avif";
 
+import BendAmir from "../assets/b-amir.jpg";
+import NationalPark from "../assets/national-park.jpg";
+
 function Tour() {
   return (
     <Box id="destination" p={"36px 0"}>
@@ -17,21 +20,21 @@ function Tour() {
             journey to remember.
           </Text>
         </Flex>
-        <SimpleGrid gap={'32px'} mt={'32px'} columns={3}>
+        <SimpleGrid gap={"32px"} mt={"32px"} columns={3}>
           <Box>
-            <Image {...css.image} src={TourImage} alt="TourImage" />
-            <Heading {...css.name}>Omprehensive Travel Support</Heading>
+            <Image {...css.image} src={BendAmir} alt="TourImage" />
+            <Heading {...css.name}>Band-e Amir National Park</Heading>
             <Text {...css.texts}>
-              24/7 customer service to assist you before, during, and after your
-              trip and it is really amazing
+              Visitors to Afghanistan have long marvelled at the country's
+              natural beauty.
             </Text>
           </Box>
           <Box>
-            <Image {...css.image} src={TourImage} alt="TourImage" />
-            <Heading {...css.name}>Omprehensive Travel Support</Heading>
+            <Image {...css.image} src={NationalPark} alt="NationalPark" />
+            <Heading {...css.name}>Wakhan National Park</Heading>
             <Text {...css.texts}>
-              24/7 customer service to assist you before, during, and after your
-              trip and it is really amazing
+              Officially recognised as a national park in 2014, the Wakhan
+              National Park is only the second of its kind in Afghanistan.
             </Text>
           </Box>
           <Box>
@@ -82,7 +85,7 @@ const css = {
   },
   image: {
     borderRadius: "12px",
-    height: "520px",
+    height: "450px",
     objectFit: "cover",
     width: "100%",
   },
