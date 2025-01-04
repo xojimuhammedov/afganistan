@@ -1,12 +1,24 @@
 import { Box, Flex, Heading, Image, SimpleGrid, Text } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import TourImage from "../assets/tour.avif";
 
 import BendAmir from "../assets/b-amir.jpg";
 import NationalPark from "../assets/national-park.jpg";
+import axios from "axios";
+import { Link } from "react-router-dom";
+
+export const BASE_URL = "https://test.al-muamalat.uz/files/";
 
 function Tour() {
+  const [tour, setTour] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://test.al-muamalat.uz/api/blog-destination")
+      .then((res) => setTour(res.data))
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <Box id="destination" p={"36px 0"}>
       <Box className="container">
@@ -24,30 +36,24 @@ function Tour() {
           gap={"32px"}
           mt={"32px"}
           columns={{ base: 1, sm: 2, lg: 3 }}>
-          <Box>
-            <Image {...css.image} src={BendAmir} alt="TourImage" />
-            <Heading {...css.name}>Band-e Amir National Park</Heading>
-            <Text {...css.texts}>
-              Visitors to Afghanistan have long marvelled at the country's
-              natural beauty.
-            </Text>
-          </Box>
-          <Box>
-            <Image {...css.image} src={NationalPark} alt="NationalPark" />
-            <Heading {...css.name}>Wakhan National Park</Heading>
-            <Text {...css.texts}>
-              Officially recognised as a national park in 2014, the Wakhan
-              National Park is only the second of its kind in Afghanistan.
-            </Text>
-          </Box>
-          <Box>
-            <Image {...css.image} src={TourImage} alt="TourImage" />
-            <Heading {...css.name}>Omprehensive Travel Support</Heading>
-            <Text {...css.texts}>
-              24/7 customer service to assist you before, during, and after your
-              trip and it is really amazing
-            </Text>
-          </Box>
+          {tour?.data?.map((item, index) => (
+            <Box key={index}>
+              <Image
+                {...css.image}
+                src={`${BASE_URL}/${item?.images?.[0]?.url?.replace(
+                  "uploads/",
+                  ""
+                )}`}
+                alt="TourImage"
+              />
+              <Heading {...css.name}>{item?.title}</Heading>
+              <Link to={`/tour/${item?.id}`}>Learn More</Link>
+              {/* <Text {...css.texts}>
+                Visitors to Afghanistan have long marvelled at the country's
+                natural beauty.
+              </Text> */}
+            </Box>
+          ))}
         </SimpleGrid>
       </Box>
     </Box>
@@ -81,7 +87,7 @@ const css = {
     fontSize: "16px",
     lineHeight: "25px",
     color: "#a2a2a2",
-    width:{
+    width: {
       base: "100%",
       lg: "600px",
     },

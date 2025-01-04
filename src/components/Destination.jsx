@@ -1,11 +1,28 @@
-import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
-import React from "react";
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Image,
+  SimpleGrid,
+  Text,
+} from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
 
-import AmirImage from "../assets/amir.jpg";
-import BamyanImage from "../assets/bamyan.jpg";
-import HeratImage from "../assets/herat.jpg";
+import { Link } from "react-router-dom";
+import axios from "axios";
+
+export const BASE_URL = "https://test.al-muamalat.uz/files/";
 
 function Destination() {
+  const [destination, setDestination] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://test.al-muamalat.uz/api/destination")
+      .then((res) => setDestination(res.data))
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <Box p={"36px 0"}>
       <Box className="container">
@@ -19,29 +36,35 @@ function Destination() {
             promises unforgettable memories
           </Text>
         </Flex>
-        <Flex
-          flexDirection={{ base: "column", lg: "row" }}
+        <SimpleGrid
           mt={"48px"}
           gap={"24px"}
-          justifyContent={"space-between"}>
-          <Box w={{ base: "100%", lg: "46%" }}>
-            <Image src={AmirImage} {...css.image} />
-            <Heading {...css.name}>Band-e-Amir National Park</Heading>
-          </Box>
-          <Flex
-            gap={"24px"}
-            w={{ base: "100%", lg: "54%" }}
-            flexDirection={"column"}>
-            <Box width={"100%"}>
-              <Image src={BamyanImage} {...css.images} />
-              <Heading {...css.name}>Bamiyan Valley</Heading>
+          columns={{ base: 1, sm: 2, lg: 3 }}>
+          {destination?.data?.map((item, index) => (
+            <Box key={index} {...css.item}>
+              <Image
+                src={`${BASE_URL}/${item?.images?.[0]?.url?.replace(
+                  "uploads/",
+                  ""
+                )}`}
+                {...css.image}
+              />
+              <Heading {...css.subname}>{item?.title}</Heading>
+              <Text
+                {...css.texts}
+                dangerouslySetInnerHTML={{
+                  __html: item?.description?.slice(0, 95),
+                }}
+              />
+
+              <Link
+                onClick={() => window.scrollTo(0, 0)}
+                to={`/tour/${item?.id}`}>
+                <Button {...css.button}>Learn More</Button>
+              </Link>
             </Box>
-            <Box width={"100%"}>
-              <Image src={HeratImage} {...css.images} />
-              <Heading {...css.name}>Herat City</Heading>
-            </Box>
-          </Flex>
-        </Flex>
+          ))}
+        </SimpleGrid>
       </Box>
     </Box>
   );
@@ -53,19 +76,35 @@ const css = {
   list: {
     alignItems: "center",
     justifyContent: "space-between",
+    flexDirection: {
+      base: "column",
+      lg: "row",
+    },
   },
   title: {
-    fontSize: "50px",
-    lineHeight: "60px",
+    fontSize: {
+      base: "30px",
+      md: "50px",
+    },
+    lineHeight: {
+      base: "40px",
+      md: "60px",
+    },
     fontWeight: "500",
     color: "#112347",
-    width: "800px",
+    width: {
+      base: "100%",
+      lg: "800px",
+    },
   },
   text: {
     fontSize: "16px",
     lineHeight: "25px",
     color: "#a2a2a2",
-    width: "420px",
+    width: {
+      base: "100%",
+      lg: "420px",
+    },
   },
   image: {
     width: "100%",
@@ -84,15 +123,53 @@ const css = {
     marginTop: "20px",
   },
   texts: {
-    fontSize: "14px",
-    lineHeight: "25px",
-    color: "#a2a2a2",
-    width: "100%",
+    fontSize: "16px",
+    lineHeight: "24px",
+    color: "#525252",
+    padding: "0 15px",
   },
   images: {
     width: "100%",
     height: "250px",
     objectFit: "cover",
     borderRadius: "8px",
+  },
+  item: {
+    borderRadius: "8px",
+    boxShadow: "rgba(0, 0, 0, 0.08) 0px 1px 16px 0px",
+    background: "#fff",
+    width: "100%",
+    paddingBottom: "24px",
+  },
+  subname: {
+    fontSize: "20px",
+    lineHeight: "28px",
+    fontWeight: "600",
+    color: "#171717",
+    padding: "0 15px",
+    margin: "10px 0",
+    marginTop: "18px",
+  },
+  image: {
+    borderRadius: "8px 8px 0 0",
+    objectFit: "cover",
+    width: "100%",
+    height: "260px",
+  },
+  button: {
+    backgroundColor: "#112347",
+    color: "#fff",
+    height: "45px",
+    width: "90%",
+    margin: "10px 15px",
+    fontSize: "16px",
+    lineHeight: "24px",
+    fontWeight: "500",
+    marginTop: "20px",
+    transition: "0.3s",
+
+    _hover: {
+      backgroundColor: "#0f2248",
+    },
   },
 };
