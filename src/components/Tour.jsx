@@ -47,7 +47,11 @@ function Tour() {
                 alt="TourImage"
               />
               <Heading {...css.name}>{item?.title}</Heading>
-              <Link to={`/tour/${item?.id}`}>Learn More</Link>
+              <Link
+                onClick={() => window.scrollTo(0, 0)}
+                to={`/tour/${item?.id}`}>
+                Learn More
+              </Link>
               {/* <Text {...css.texts}>
                 Visitors to Afghanistan have long marvelled at the country's
                 natural beauty.
