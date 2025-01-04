@@ -2,6 +2,7 @@ import { Box, Flex, Image, Link, Text } from "@chakra-ui/react";
 import React from "react";
 import LogoIcon from "../assets/logo.png";
 import { Link as Alink } from "react-router-dom";
+import NavbarMenu from "./NavbarMenu";
 
 function Navbar() {
   return (
@@ -27,6 +28,7 @@ function Navbar() {
             <Link href="#contact" {...css.link}>
               Contact
             </Link>
+            <NavbarMenu />
           </Flex>
         </Flex>
       </Box>
