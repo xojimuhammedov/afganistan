@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import React from "react";
 
-import HeaderBanner from "../assets/header-banner.jpg";
+import HeaderBanner from "../assets/header.jpg";
 
 function Header() {
   return (

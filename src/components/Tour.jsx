@@ -1,10 +1,5 @@
 import { Box, Flex, Heading, Image, SimpleGrid, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-
-import TourImage from "../assets/tour.avif";
-
-import BendAmir from "../assets/b-amir.jpg";
-import NationalPark from "../assets/national-park.jpg";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -52,10 +47,6 @@ function Tour() {
                 to={`/tour/${item?.id}`}>
                 Learn More
               </Link>
-              {/* <Text {...css.texts}>
-                Visitors to Afghanistan have long marvelled at the country's
-                natural beauty.
-              </Text> */}
             </Box>
           ))}
         </SimpleGrid>
