@@ -19,7 +19,7 @@ function Destination() {
 
   useEffect(() => {
     axios
-      .get("https://test.al-muamalat.uz/api/destination")
+      .get("https://test.al-muamalat.uz/api/tour-destination")
       .then((res) => setDestination(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -59,7 +59,7 @@ function Destination() {
 
               <Link
                 onClick={() => window.scrollTo(0, 0)}
-                to={`/tour/${item?.id}`}>
+                to={`/destination/${item?.id}`}>
                 <Button {...css.button}>Learn More</Button>
               </Link>
             </Box>

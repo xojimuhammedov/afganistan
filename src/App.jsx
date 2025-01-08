@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 import Partner from "./components/Partner";
 import Tour from "./components/Tour";
 import TourPage from "./pages/TourPage";
+import DestinationPage from "./pages/DestinationPage";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           }
         />
         <Route path="/tour/:id" element={<TourPage />} />
+        <Route path="/destination/:id" element={<DestinationPage />} />
       </Routes>
       <Footer />
     </>
