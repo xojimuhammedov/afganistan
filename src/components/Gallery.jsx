@@ -2,12 +2,13 @@ import { Box, Heading, Image } from "@chakra-ui/react";
 import React from "react";
 import Slider from "react-slick";
 
-import GalleryOne from "../assets/kabul.jpg";
-import GalleryTwo from "../assets/bayman.jpg";
 import GalleryThree from "../assets/mazar.jpeg";
 import GalleryFour from "../assets/gallery-4.jpg";
-import GalleryFive from "../assets/gallery-5.jpg";
-import GallerySix from "../assets/galley-6.jpg";
+import GallerySeven from "../assets/gallery-7.jpg";
+import GalleryEight from "../assets/gallery-8.jpg";
+import GalleryNine from "../assets/gallery-9.jpg";
+import GalleryTen from "../assets/gallery-10.jpg";
+import GalleryEleven from "../assets/gallery-11.jpg";
 
 function Gallery() {
   var settings = {
@@ -52,12 +53,7 @@ function Gallery() {
       <Box className="container">
         <Heading {...css.title}>Journey in Afganistan</Heading>
         <Slider {...settings}>
-          <Box>
-            <Image {...css.image} src={GalleryOne} alt="GalleryOne" />
-          </Box>
-          <Box>
-            <Image {...css.image} src={GalleryTwo} alt="GalleryTwo" />
-          </Box>
+     
           <Box>
             <Image {...css.image} src={GalleryThree} alt="GalleryThree" />
           </Box>
@@ -65,10 +61,19 @@ function Gallery() {
             <Image {...css.image} src={GalleryFour} alt="GalleryOne" />
           </Box>
           <Box>
-            <Image {...css.image} src={GalleryFive} alt="GalleryTwo" />
+            <Image {...css.image} src={GallerySeven} alt="GalleryTwo" />
           </Box>
           <Box>
-            <Image {...css.image} src={GallerySix} alt="GalleryTwo" />
+            <Image {...css.image} src={GalleryEight} alt="GalleryTwo" />
+          </Box>
+          <Box>
+            <Image {...css.image} src={GalleryNine} alt="GalleryTwo" />
+          </Box>
+          <Box>
+            <Image {...css.image} src={GalleryTen} alt="GalleryTwo" />
+          </Box>
+          <Box>
+            <Image {...css.image} src={GalleryEleven} alt="GalleryTwo" />
           </Box>
         </Slider>
       </Box>
