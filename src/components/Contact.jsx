@@ -22,8 +22,8 @@ function Contact() {
           <Box {...css.left}>
             <Heading {...css.name}>Contact Information</Heading>
             <Text {...css.text}>Say something to start a live chat!</Text>
-            <Link {...css.link} target="_blank" href="tel:998951777865">
-              +998 95 177 78 65
+            <Link {...css.link} target="_blank" href="tel+998993087865">
+            +998 99 308 78 65
             </Link>
             <Link
               {...css.link}
@@ -31,12 +31,12 @@ function Contact() {
               target="_blank">
               info@visitafganistan.uz
             </Link>
-            <Link
+            {/* <Link
               target="_blank"
               href={"https://maps.app.goo.gl/SWr6Dqkd9X9S79iz6"}
               {...css.link}>
               Uzbekistan, Tashkent city, Mirabad district, Chimkent street 7
-            </Link>
+            </Link> */}
           </Box>
           <Box {...css.right}>
             <SimpleGrid gap={"16px"} columns={{ base: 1, lg: 2 }}>

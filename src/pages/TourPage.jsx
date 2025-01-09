@@ -1,7 +1,6 @@
-import { Box, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Link, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-// import { BASE_URL } from "../data";
 import axios from "axios";
 
 export const BASE_URL = "https://test.al-muamalat.uz/files/";
@@ -30,6 +29,19 @@ function TourPage() {
           {...css.text}
           dangerouslySetInnerHTML={{ __html: tour?.description }}
         />
+        <Flex
+          ml={{ base: "0", lg: "36px" }}
+          mt={"24px"}
+          align={{ base: "baseline", lg: "center" }}
+          flexDirection={{base:"column", lg:"row"}}
+          gap={"24px"}>
+          <Link {...css.link} href="https://t.me/Ramziddin_wrt" target="_blank">
+            Contact for Telegram
+          </Link>
+          <Link {...css.link} target="_blank" href="tel:+998993087865">
+            Contact for Phone
+          </Link>
+        </Flex>
       </Box>
     </Box>
   );
@@ -69,6 +81,19 @@ const css = {
     paddingLeft: {
       base: "0",
       lg: "36px",
+    },
+  },
+  link: {
+    padding: "12px 24px",
+    background: "#112347",
+    color: "#fff",
+    borderRadius: "12px",
+    fontSize: "16px",
+    lineHeight: "24px",
+    fontWeight: "500",
+    transition: "0.3s",
+    _hover: {
+      textDecoration: "none",
     },
   },
 };

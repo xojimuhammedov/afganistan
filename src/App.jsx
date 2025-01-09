@@ -24,7 +24,7 @@ function App() {
               <Header />
               <About />
               <Destination />
-              <Partner />
+              {/* <Partner /> */}
               <Tour />
               <Gallery />
               <Contact />
