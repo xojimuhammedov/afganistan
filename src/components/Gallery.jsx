@@ -53,7 +53,6 @@ function Gallery() {
       <Box className="container">
         <Heading {...css.title}>Journey in Afganistan</Heading>
         <Slider {...settings}>
-     
           <Box>
             <Image {...css.image} src={GalleryThree} alt="GalleryThree" />
           </Box>

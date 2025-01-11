@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Image, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, SimpleGrid, Text, Button } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -45,8 +45,13 @@ function Tour() {
               <Link
                 onClick={() => window.scrollTo(0, 0)}
                 to={`/tour/${item?.id}`}>
-                Learn More
+                <Button {...css.button}>Learn More</Button>
               </Link>
+              {/* <Link
+                onClick={() => window.scrollTo(0, 0)}
+                to={`/tour/${item?.id}`}>
+                Learn More
+              </Link> */}
             </Box>
           ))}
         </SimpleGrid>
@@ -105,5 +110,22 @@ const css = {
     height: "450px",
     objectFit: "cover",
     width: "100%",
+  },
+  button: {
+    backgroundColor: "#112347",
+    color: "#fff",
+    height: "45px",
+    width: "90%",
+    margin: "10px 15px",
+    fontSize: "16px",
+    lineHeight: "24px",
+    fontWeight: "500",
+    marginTop: "20px",
+    transition: "0.3s",
+    borderRadius:"20px",
+
+    _hover: {
+      backgroundColor: "#0f2248",
+    },
   },
 };
