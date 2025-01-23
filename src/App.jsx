@@ -15,7 +15,7 @@ import DestinationPage from "./pages/DestinationPage";
 function App() {
   return (
     <>
-{/*       <Navbar />
+     <Navbar />
       <Routes>
         <Route
           path="/"
@@ -33,7 +33,7 @@ function App() {
         <Route path="/tour/:id" element={<TourPage />} />
         <Route path="/destination/:id" element={<DestinationPage />} />
       </Routes>
-      <Footer /> */}
+      <Footer />
     </>
   );
 }
